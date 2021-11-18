@@ -1,0 +1,59 @@
+// Body
+$body-bg: linear-gradient(to bottom, #046496 30% , #11054f 80%);
+
+$font-size-root: 14px;
+
+
+
+$container-max-widths: (
+  "xs": 430px,
+  "md": 960px,
+  "lg": 1140px,
+  "xl": 1140px,
+);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+$font-family: 'Lilita One' !default;
+
+.v-application,
+.v-application .headline {
+  font-family: $font-family !important;
+}
+
+.v-card__title.headline.font-weight-bold {
+  font-weight: 400 !important;
+  font-family: $font-family !important;
+}
+
+.v-application .headline{
+  font-family: $font-family !important;
+}
+
+.v-btn__content {
+  color: #ffffff !important;
+  font-size: 14px;
+}
+ .social {
+   background-color: #ec6200 !important;
+   margin: .4em;
+   transition: width .2s, height .2s;
+ }
+ .social:hover {
+   margin: .4em;
+   background-color: #ca5705 !important;
+   height: 30px;
+   width: 30px;
+   transition: width .2s, height .2s;
+ }
+
+h4,
+h3,
+h2, 
+p,
+.v-list-item__subtitle{
+  font-family: $font-family !important;
+  font-weight: 400 !important;
+  color: #ffffff;
+}

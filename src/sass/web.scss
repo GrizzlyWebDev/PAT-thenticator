@@ -1,0 +1,171 @@
+// Variables
+@import "variables";
+
+
+
+.v-application .v-application--is-ltr .theme--light{
+  background-color: $body-bg !important;
+}
+
+.dark-blue {
+  background: rgb(33, 0, 67, 0.9);
+}
+
+html {
+  background-color: $body-bg !important;
+}
+
+#app {
+  background: $body-bg !important;
+}
+
+.v-card__title {
+    color: #ca5705 !important;
+}
+#app > div > main > div > div.container > div > div > div.text-center.col > div:nth-child(5) {
+  color: #ca5705 !important;
+}
+.card-gradient {
+    background: linear-gradient(45deg, #1e0985 30% , #1e088b 70%) !important;
+    border-radius: 10px 10px 10px 10px !important;
+}
+#app > div > main > div > div > div > div > div.text-center.col > hr {
+    border-color:#ec6200 !important;
+}
+#app > div > main > div > div > div > div > div.text-center.col > div.v-card__text > button {
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #ec6200;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: 0px 0px 10px 0px #ec6200;
+    padding: 14px 30px 14px 30px;
+}
+
+
+
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 600s;
+
+/* Pauls awesome mixin */
+@function particles($max) {
+   $val: 0px 0px $color-particle;
+   @for $i from 1 through $max {
+      $val: #{$val},
+      random($spacing)+px random($spacing)+px $color-particle;
+   }
+   @return $val;
+}
+
+@mixin particles($max) {
+   box-shadow: particles($max);
+}
+
+/* Styles */
+html, body {
+    height: 100%;
+}
+
+
+.page-bg{
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.animation-wrapper {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  z-index: 0;
+  animation: animParticle $time-1 linear infinite;
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-1:after {
+  z-index: 0;
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-2 {
+  z-index: 0;
+  animation: animParticle $time-2 linear infinite;
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  z-index: 0;
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-3 {
+  z-index: 0;
+  animation: animParticle $time-3 linear infinite;
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  z-index: 0;
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-4 {
+  z-index: 0;
+  animation: animParticle $time-4 linear infinite;
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  z-index: 0;
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from { transform: translateY(0px); }
+  to   { transform: translateY($spacing * -1); }
+}
+
+.page-wrapper {
+    text-align: center;
+    color: #fff;
+    z-index:-1;
+}
