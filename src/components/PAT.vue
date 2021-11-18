@@ -40,7 +40,7 @@
           <v-card-title class="justify-center"
             >To access server you must be a PAT holder</v-card-title
           >
-          <v-card-text v-if="holder"><a href:url>{{url}}</a></v-card-text>
+          <v-card-text v-if="holder"><a :href="url">{{url}}</a></v-card-text>
           
           <v-card-text>
             <v-btn v-if="!connected" @click="connect">Connect Wallet</v-btn>
@@ -89,10 +89,11 @@ methods: {
       }
     },
     async getUrl(){
-      this.url = await this.axios({
+      let res = await this.axios({
         method: "get",
         url: "https://patcordinvite.herokuapp.com/",
       });
+      this.url = res.data;
   },
     }
     
