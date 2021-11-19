@@ -38,8 +38,9 @@
           <v-card-title class="justify-center">PAT Authenticator</v-card-title>
           <v-divider class="mx-4"></v-divider>
           <v-card-title class="justify-center"
-            >To access server you must be a PAT holder</v-card-title
+            >To join you must be a PAT holder</v-card-title
           >
+          
           <v-card-text v-if="holder"><a :href="url">{{url}}</a></v-card-text>
           <v-progress-circular
           v-if="loading"
