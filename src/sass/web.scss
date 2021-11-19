@@ -21,9 +21,11 @@ html {
 
 .v-card__title {
     color: #ca5705 !important;
+    font-size: 1.2em !important;
 }
 #app > div > main > div > div.container > div > div > div.text-center.col > div:nth-child(5) {
   color: #ca5705 !important;
+  font-size: 1em !important;
 }
 .card-gradient {
     background: linear-gradient(45deg, #1e0985 30% , #1e088b 70%) !important;
@@ -39,6 +41,9 @@ html {
     border-radius: 12px 12px 12px 12px;
     box-shadow: 0px 0px 10px 0px #ec6200;
     padding: 14px 30px 14px 30px;
+}
+#app > div > main > div > div.container > div > div > div.text-center.col {
+  width: 80vw !important;
 }
 
 
