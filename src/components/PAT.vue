@@ -41,7 +41,7 @@
             >To join you must be a PAT holder</v-card-title
           >
           
-          <v-card-text v-if="holder"><a :href="url">{{url}}</a></v-card-text>
+          <v-card-text v-if="holder"><a :href="link">{{url}}</a></v-card-text>
           <v-progress-circular
           v-if="loading"
             indeterminate
@@ -68,6 +68,7 @@ export default {
     connected: false,
     bal: 0,
     url:'',
+    link:'',
     holder: false,
     alertHolder: false,
     alert:false,
@@ -100,6 +101,11 @@ methods: {
         url: "https://patcordinvite.herokuapp.com/",
       });
       this.url = res.data;
+      if (this.url === 'Server is closed') {
+        this.link = 'https://patcoin.io'
+      } else {
+        this.link = this.url;
+      }
       this.loading = false;
   },
     }
